@@ -4,7 +4,7 @@
 
 1. **Clone the project**
    ```bash
-   git clone https://github.com/your-user/football-manager.git
+   git clone https://github.com/ArSingular/manager-task.git
    cd football-manager
 Run with Maven
 ./mvnw spring-boot:run
