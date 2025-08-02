@@ -39,6 +39,10 @@ public class PlayerServiceImpl implements PlayerService {
         int teamId = playerDTO.getPlayerTeamId();
         Team team = teamRepository.findById(teamId)
                 .orElseThrow(() -> new EntityNotFoundException("Team with id " + teamId + " was not found"));
+
+        if(playerDTO.getAge() <= playerDTO.getExperience()){
+            throw new ServiceException("Player's age must be greater than experience");
+        }
         Player player = playerMapper.toPlayer(playerDTO);
         player.setTeam(team);
 
